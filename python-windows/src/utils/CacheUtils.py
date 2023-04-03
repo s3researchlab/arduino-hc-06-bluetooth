@@ -1,9 +1,9 @@
 
 import json 
 import os.path
-from .utils.FileUtils import FileUtils
+from .FileUtils import FileUtils
 
-class Cache:
+class CacheUtils:
     
     @staticmethod
     def init():

@@ -1,7 +1,7 @@
 import bluetooth
 import sys
 from tabulate import tabulate
-from .Cache import Cache
+from .utils.CacheUtils import CacheUtils
 
 class BluetoothConnection:
     
@@ -48,7 +48,7 @@ class BluetoothConnection:
     
     def selectDevice(self):
         
-        cache = Cache.load("cache.json")
+        cache = CacheUtils.load("cache.json")
         
         if cache == None:
             
@@ -65,7 +65,7 @@ class BluetoothConnection:
 
             device = devices.get(int(index))
             
-            Cache.save("cache.json", device)
+            CacheUtils.save("cache.json", device)
             
             return device
 
@@ -74,7 +74,7 @@ class BluetoothConnection:
     
     def listen(self):
         
-        Cache.init()
+        CacheUtils.init()
         
         device = self.selectDevice()
         
