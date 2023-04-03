@@ -74,6 +74,8 @@ class BluetoothConnection:
     
     def listen(self):
         
+        Cache.init()
+        
         device = self.selectDevice()
         
         addr = device.get("addr")
