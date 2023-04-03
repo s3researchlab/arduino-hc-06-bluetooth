@@ -1,5 +1,4 @@
 import re
-import bluetooth
 
 from src.BluetoothConnection import BluetoothConnection
 
