@@ -61,6 +61,8 @@ String readFromBluetooth() {
     }
   }
 
+  message.trim();
+
   return message;
 }
 
@@ -69,8 +71,6 @@ void sendToBluetooth(String text) {
 }
 
 void runCommand(String command) {
-
-  command.trim();
 
   Serial.println("Command: " + command);
 
