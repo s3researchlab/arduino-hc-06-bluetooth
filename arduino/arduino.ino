@@ -67,15 +67,17 @@ void runCommand(String command) {
 
 void loop() {
 
+  sensorValue = readPotentiometer();
+
+  BluetoothConn.send("p" + String(sensorValue));
+
   message = BluetoothConn.read();
 
   if (message != "") {
     runCommand(message);
   }
 
-  sensorValue = readPotentiometer();
-
-  BluetoothConn.send("p" + String(sensorValue));
+  
 
   delay(100);
 }
