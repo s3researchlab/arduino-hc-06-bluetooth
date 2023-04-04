@@ -27,7 +27,7 @@ class BluetoothConnection:
             callback(text)
             
     def send(self, text):
-        self.sock.send(text)
+        self.sock.send(text + ";")
    
     def discoverDevices(self):
     
