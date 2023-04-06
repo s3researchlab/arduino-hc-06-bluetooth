@@ -65,8 +65,6 @@ class BluetoothConnection:
 
             device = devices.get(int(index))
             
-            CacheUtils.save("cache.json", device)
-            
             return device
 
         else:
@@ -99,6 +97,8 @@ class BluetoothConnection:
         self.sock.connect((host, port))
         
         self.fire("connected", "")
+        
+        CacheUtils.save("cache.json", device)
         
         try:
             while 1:
